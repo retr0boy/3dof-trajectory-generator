@@ -1,12 +1,12 @@
-3-DOF Planar Robot Trajectory Controller for ROS/Gazebo
+# 3-DOF Planar Robot Trajectory Controller for ROS/Gazebo
 
-1. Overview
+## 1. Overview
 
 This ROS package implements a multi-segment trajectory controller for a 3-DOF planar robotic arm for use in the Gazebo simulation environment.
 
 The main controller node, task3.py, takes a list of Cartesian "via points" as input. It then calculates the necessary joint-space path using inverse kinematics and generates a smooth, "fly-by" trajectory using cubic polynomials. The node publishes joint commands to move the robot in Gazebo and saves plots of the resulting joint and end-effector paths.
 
-2. Key Features
+## 2. Key Features
 
 Inverse Kinematics (IK): Includes a full IK solver (inverse_kinematics_with_orientation) that calculates the required joint angles $(q_1, q_3, q_5)$ for a given end-effector position $(x, y)$ and orientation $(\phi)$.
 
@@ -22,7 +22,7 @@ A Joint-space plot (Angles vs. Time) showing the motion of each joint.
 
 Workspace Analysis: A MATLAB script (.m file) is included to calculate and visualize the robot's reachable workspace based on its link lengths and joint limits.
 
-3. Robot Configuration
+## 3. Robot Configuration
 
 The controller is configured for a 3-DOF planar manipulator with the following link lengths:
 
@@ -32,9 +32,9 @@ Link 2 ($L_2$): 135 mm
 
 End-Effector Offset ($L_3$): 46.7 mm
 
-4. Dependencies
+## 4. Dependencies
 
-ROS (e.g., Noetic)
+ROS Noetic
 
 Gazebo
 
@@ -42,13 +42,13 @@ Python 3 (rospy, numpy, matplotlib)
 
 MATLAB (for running the workspace analysis script)
 
-5. How to Run
+Dynamixel Motors Git
+
+Robot Move Git
+
+## 5. How to Run
 
 Launch Gazebo: In a terminal, launch your Gazebo simulation with the 3-DOF robot.
-
-# Example launch command, replace with your actual launch file
-roslaunch robot_move your_robot_world.launch
-
 
 Run the Controller: In a second terminal, run the task3.py script using rosrun. The via points are passed as the _targets parameter.
 
@@ -71,17 +71,13 @@ phi: End-effector orientation in radians.
 
 The robot will start at its home position (fully extended along the X-axis) and move through each via point. Each segment of the trajectory has a fixed duration of 5 seconds.
 
-6. Example Results
+## 6. Example Results
 
-Running the command above will generate two plot files (e.g., traj_joint.png and traj_cartesian.png).
+Running the command above will generate two plot files (e.g., traj_all_joints_joint.png and traj_all_joints_cartesian.png).
 
 Cartesian Trajectory (Y vs. X)
 
 Joint Trajectories (Angles vs. Time)
-
-
-
-
 
 Workspace Plots
 
