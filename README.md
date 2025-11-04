@@ -81,6 +81,8 @@ Joint Trajectories (Angles vs. Time)
 
 Workspace Plots
 
+Robot configuration plot
+
 The included .m file generates plots of the robot's reachable workspace.
 
 Workspace (Joint Limits: ±45°)
