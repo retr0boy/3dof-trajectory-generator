@@ -1,8 +1,8 @@
-# 3-DOF Planar Robot Trajectory Controller for ROS/Gazebo
+# 3-DOF Planar Robot Trajectory Controller for ROS. ROBT403 Lab 3
 
 ## 1. Overview
 
-This ROS package implements a multi-segment trajectory controller for a 3-DOF planar robotic arm for use in the Gazebo simulation environment.
+This code implements a multi-segment trajectory controller for a 3-DOF planar robotic arm for use in the Gazebo simulation environment.
 
 The main controller node, task3.py, takes a list of Cartesian "via points" as input. It then calculates the necessary joint-space path using inverse kinematics and generates a smooth, "fly-by" trajectory using cubic polynomials. The node publishes joint commands to move the robot in Gazebo and saves plots of the resulting joint and end-effector paths.
 
